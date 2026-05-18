@@ -48,7 +48,7 @@ echo "Pulling container images..."
 [ ! -f $SIF_DIR/interproscan.sif ] && \
     apptainer pull --tmpdir $APPTAINER_TMPDIR \
         $SIF_DIR/interproscan.sif \
-        docker://quay.io/biocontainers/interproscan:5.62_94.0--hec16e2b_1
+        docker://quay.io/biocontainers/interproscan:5.59_91.0--hec16e2b_1
 
 echo "✓ All container images ready"
 
@@ -104,11 +104,4 @@ snakemake -s annotation.smk --unlock --profile profiles/bunya/
 
 snakemake -s annotation.smk \
     --profile profiles/bunya/ \
-
-echo "=================================================="
-echo "Pipeline completed!"
-echo "End time: $(date)"
-echo "=================================================="
-
-echo "=== RESULTS ==="
-find results -name "*.xlsx" -o -name "*.csv" 2>/dev/null | head -20
+    --forcerun interproscan combine_annotations final_annotation summarize_all_mutants
