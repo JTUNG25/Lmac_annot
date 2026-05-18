@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 eggnog = "/QRISdata/Q9140/lmac/annot_lmac/sifs/eggnog.sif"
-interproscan = "/QRISdata/Q9140/lmac/annot_lmac/sifs/interproscan.sif"
 diamond = "/QRISdata/Q9140/lmac/annot_lmac/sifs/diamond.sif"
 biopython = "/QRISdata/Q9140/lmac/annot_lmac/sifs/biopython.sif"
 
@@ -105,41 +104,6 @@ rule eggnog_annotation:
         --cpu {threads} \
         > {log} 2>&1
         """
-
-
-rule interproscan:
-    input:
-        proteins="results/sequences/{mutant}/proteins.fasta",
-    output:
-        results=(
-            "results/interproscan/{mutant}/interproscan_results.tsv"
-            if RUN_INTERPROSCAN
-            else []
-        ),
-    log:
-        "logs/interproscan/{mutant}.log",
-    container:
-        interproscan
-    threads: 8
-    resources:
-        mem_mb=32000,
-        runtime=360,
-    shell:
-        """
-        mkdir -p results/interproscan/{wildcards.mutant}
-
-        interproscan.sh \
-            -i {input.proteins} \
-            -f tsv \
-            -o {output.results} \
-            --goterms \
-            --pathways \
-            --cpu {threads} \
-            > {log} 2>&1
-        """
-        if RUN_INTERPROSCAN
-        else "echo 'InterProScan skipped' > {log}"
-
 
 rule diamond_blast:
     input:

@@ -45,11 +45,6 @@ echo "Pulling container images..."
         $SIF_DIR/diamond.sif \
         docker://quay.io/biocontainers/diamond:2.1.8--h43eeafb_0
 
-[ ! -f $SIF_DIR/interproscan.sif ] && \
-    apptainer pull --tmpdir $APPTAINER_TMPDIR \
-        $SIF_DIR/interproscan.sif \
-        docker://quay.io/biocontainers/interproscan:5.59_91.0--hec16e2b_1
-
 echo "✓ All container images ready"
 
 # ── Step 2: Download UniProt/DIAMOND database ─────────────────────────────────
@@ -104,4 +99,3 @@ snakemake -s annotation.smk --unlock --profile profiles/bunya/
 
 snakemake -s annotation.smk \
     --profile profiles/bunya/ \
-    --forcerun interproscan combine_annotations final_annotation summarize_all_mutants
