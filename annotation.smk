@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 
-# Container definitions
 eggnog    = "docker://quay.io/biocontainers/eggnog-mapper:2.1.12--pyhdfd78af_0"
 interproscan = "docker://quay.io/biocontainers/interproscan:5.62_94.0--hec16e2b_1"
 diamond   = "docker://quay.io/biocontainers/diamond:2.1.8--h43eeafb_0"
 biopython = "docker://quay.io/biocontainers/biopython:1.81"
 
-# Input files - EDIT THESE PATHS
 GENOME     = "data/genome/JN3.fasta"
 ANNOTATION = "data/genome/JN3.gff"
 
@@ -92,6 +90,7 @@ rule extract_sequences:
 rule eggnog_annotation:
     input:
         proteins = "results/sequences/{mutant}/proteins.fasta",
+        data_dir = "databases/eggnog",
     output:
         annotations    = "results/eggnog/{mutant}/eggnog.emapper.annotations",
         hits           = "results/eggnog/{mutant}/eggnog.emapper.hits",
@@ -110,6 +109,7 @@ rule eggnog_annotation:
 
         emapper.py \
             -i {input.proteins} \
+            --data_dir {input.data_dir} \ 
             --output results/eggnog/{wildcards.mutant}/eggnog \
             --output_dir results/eggnog/{wildcards.mutant} \
             -m diamond \
