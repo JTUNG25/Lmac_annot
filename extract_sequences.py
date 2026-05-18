@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 """
 Extract protein sequences from Leptosphaeria maculans JN3 annotation files
-Supports GFF3/GTF formats — no gffutils required, only biopython + pandas
+Supports GFF3/GTF formats — no gffutils or pandas required, only biopython + stdlib
 """
 
 import os
 import sys
+import csv
 import argparse
 from collections import defaultdict
 from Bio import SeqIO
 from Bio.Seq import Seq
 from Bio.SeqRecord import SeqRecord
-import pandas as pd
 
 
 class GFFParser:
@@ -37,10 +37,10 @@ class GFFParser:
     def _parse(self):
         print(f"Parsing annotation file: {self.gff_file}")
         # Two-pass approach:
-        #   Pass 1 — collect mRNA→gene mapping
+        #   Pass 1 — collect mRNA->gene mapping
         #   Pass 2 — collect CDS records, resolve to gene ID
 
-        mrna_to_gene = {}  # mRNA_id -> gene_id
+        mrna_to_gene = {}
 
         with open(self.gff_file) as fh:
             for line in fh:
@@ -67,8 +67,7 @@ class GFFParser:
                 cols = line.rstrip("\n").split("\t")
                 if len(cols) < 9:
                     continue
-                ftype = cols[2]
-                if ftype != "CDS":
+                if cols[2] != "CDS":
                     continue
 
                 seqid = cols[0]
@@ -119,7 +118,7 @@ class SequenceExtractor:
         """Concatenate CDS features into a single coding sequence."""
         strand = cds_list[0]["strand"]
 
-        # Sort: forward strand → ascending start; reverse → descending start
+        # Forward strand: ascending start; reverse strand: descending start
         sorted_cds = sorted(cds_list, key=lambda x: x["start"], reverse=(strand == "-"))
 
         pieces = []
@@ -142,10 +141,6 @@ class SequenceExtractor:
 
         target_genes = set(gene_ids) if gene_ids else None
 
-        protein_records = []
-        cds_records = []
-        missing = []
-
         genes_to_process = (
             {g: v for g, v in parser.cds_by_gene.items() if g in target_genes}
             if target_genes
@@ -160,6 +155,9 @@ class SequenceExtractor:
                     print(f"  {m}")
                 if len(missing) > 10:
                     print(f"  ... and {len(missing) - 10} more")
+
+        protein_records = []
+        cds_records = []
 
         for gene_id, cds_list in genes_to_process.items():
             print(f"Processing gene: {gene_id}")
@@ -207,8 +205,7 @@ class SequenceExtractor:
             SeqIO.write(protein_records, protein_file, "fasta")
             print(f"Saved {len(protein_records)} protein sequences → {protein_file}")
         else:
-            # Write empty file so Snakemake output exists
-            open(protein_file, "w").close()
+            open(protein_file, "w").close()  # empty file so Snakemake output exists
 
         if cds_records:
             SeqIO.write(cds_records, cds_file, "fasta")
@@ -219,19 +216,32 @@ class SequenceExtractor:
         return protein_file, cds_file
 
     def create_gene_summary(self, protein_records, cds_records):
+        """
+        Write extraction_summary.csv using only stdlib csv module.
+
+        csv.DictWriter works in two steps:
+          1. writeheader() — writes the column names as the first row
+          2. writerow({...}) — writes one data row per call, matching keys
+             to column names. Called once per gene inside the for loop.
+        """
         cds_len = {r.id: len(r.seq) for r in cds_records}
-        summary_data = [
-            {
-                "Gene_ID": r.id,
-                "Protein_Length": len(r.seq),
-                "CDS_Length": cds_len.get(r.id, 0),
-                "Description": r.description,
-            }
-            for r in protein_records
-        ]
-        df = pd.DataFrame(summary_data)
         summary_file = os.path.join(self.output_dir, "extraction_summary.csv")
-        df.to_csv(summary_file, index=False)
+
+        with open(summary_file, "w", newline="") as f:
+            writer = csv.DictWriter(
+                f, fieldnames=["Gene_ID", "Protein_Length", "CDS_Length", "Description"]
+            )
+            writer.writeheader()  # row 1: Gene_ID,Protein_Length,CDS_Length,Description
+            for r in protein_records:
+                writer.writerow(
+                    {  # one row per gene
+                        "Gene_ID": r.id,
+                        "Protein_Length": len(r.seq),
+                        "CDS_Length": cds_len.get(r.id, 0),
+                        "Description": r.description,
+                    }
+                )
+
         print(f"Saved gene summary → {summary_file}")
         return summary_file
 
