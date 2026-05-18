@@ -29,9 +29,7 @@ MUTANTS = {
 }
 
 # Pipeline settings
-RUN_INTERPROSCAN = (
-    False  # Set to True if you want domain analysis (adds 3+ hours per mutant)
-)
+RUN_INTERPROSCAN = True
 MAX_EVALUE = 1e-5
 
 # Get all mutant names
@@ -314,29 +312,3 @@ rule summarize_all_mutants:
                 f"Summary saved with {len(combined_df)} total annotations "
                 f"across {len(mutant_summaries)} mutant conditions"
             )
-
-
-rule setup_databases:
-    output:
-        uniprot_db="databases/uniprot_sprot.dmnd",
-    log:
-        "logs/setup_databases.log",
-    container:
-        diamond
-    threads: 4
-    resources:
-        mem_mb=16000,
-        runtime=240,
-    shell:
-        """
-        mkdir -p databases
-        cd databases
-
-        wget https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz
-        gunzip uniprot_sprot.fasta.gz
-
-        diamond makedb --in uniprot_sprot.fasta -d uniprot_sprot
-        rm uniprot_sprot.fasta
-
-        echo "Database setup complete" > ../logs/setup_databases.log
-        """
