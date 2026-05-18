@@ -100,7 +100,7 @@ rule eggnog_annotation:
             --output results/eggnog/{wildcards.mutant}/eggnog \
             --output_dir results/eggnog/{wildcards.mutant} \
             -m diamond \
-            --tax_scope fungi \
+            --tax_scope 4751 \
             --go_evidence non-electronic \
             --target_orthologs all \
             --seed_ortholog_evalue 0.001 \
