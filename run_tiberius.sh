@@ -3,12 +3,11 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
-#SBATCH --mem=16GB
+#SBATCH --mem=4G
 #SBATCH --time=24:00:00
 #SBATCH --job-name=tiberius
-#SBATCH --partition=gpu_cuda
-#SBATCH --qos=gpu
-#SBATCH --gres=gpu:h100:1
+#SBATCH --partition=general
+#SBATCH --qos=normal
 #SBATCH --output=tiberius.log
 
 source /sw/local/rocky8/noarch/rcc/software/miniforge/24.11.3-0/etc/profile.d/conda.sh

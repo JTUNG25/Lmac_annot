@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
 # containers
-tiberius = "docker://larsgabriel23/tiberius@sha256:c35ac0b456ee95df521e19abb062329fc8e39997723196172e10ae2c345f41e3"
+tiberius = "/home/uqctung/containers/tiberius.sif"
+#"docker://larsgabriel23/tiberius@sha256:c35ac0b456ee95df521e19abb062329fc8e39997723196172e10ae2c345f41e3"
 
 input_genomes = [
     "L_mac_D5",
