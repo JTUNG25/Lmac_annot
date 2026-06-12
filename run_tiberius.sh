@@ -8,7 +8,7 @@
 #SBATCH --job-name=tiberius
 #SBATCH --partition=general
 #SBATCH --qos=normal
-#SBATCH --output=tiberius.log
+#SBATCH --output=tb.log
 
 source /sw/local/rocky8/noarch/rcc/software/miniforge/24.11.3-0/etc/profile.d/conda.sh
 conda activate snakemake8

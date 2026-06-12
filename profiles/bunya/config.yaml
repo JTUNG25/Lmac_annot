@@ -8,12 +8,14 @@ cluster-generic-submit-cmd: mkdir -p logs/{rule} &&
   --job-name=smk-{rule}
   --output=logs/{rule}/{rule}-%j.out
   --parsable
-  {resources.partitionFlag}
+  --partition={resources.partition}
+  --qos={resources.qos}
   {resources.gres}
 cluster-generic-status-cmd: status-sacct-robust.sh
 cluster-generic-cancel-cmd: scancel
 default-resources:
-  - partitionFlag=""
+  - partition="general"
+  - qos="normal"
   - mem_mb=4000
   - runtime=10
   - gres=""
