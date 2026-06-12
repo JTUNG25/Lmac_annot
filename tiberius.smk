@@ -44,9 +44,9 @@ rule tiberius:
         batch_size=8,
         model_cfg="fungi",
     shell:
-    "tiberius_venv/bin/python Tiberius/tiberius.py "
-    "--genome {input.fasta} "
-    "--model_cfg Tiberius/model_cfg/{params.model_cfg}.yaml "
-    "--out {output.gtf} "
-    "--batch_size {params.batch_size} "
-    "&> {log}"
+        "tiberius_venv/bin/python Tiberius/tiberius.py "
+        "--genome {input.fasta} "
+        "--model_cfg Tiberius/model_cfg/{params.model_cfg}.yaml "
+        "--out {output.gtf} "
+        "--batch_size {params.batch_size} "
+        "&> {log}"
