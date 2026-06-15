@@ -49,13 +49,15 @@ rule omark:
         omark
     resources:
         mem_mb=16000,
-        runtime=60,
+        runtime=120,
     params:
         outdir=f"results/omark/{GENOME}",
+        ete_db="data/omark/ete3/taxa.sqlite",
     shell:
         "omark "
         "-f {input.omamer_out} "
         "-d {input.db} "
         "-of {input.proteins} "
         "-o {params.outdir} "
+        "-e {params.ete_db} "
         "&> {log}"
