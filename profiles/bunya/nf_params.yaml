@@ -2,39 +2,29 @@ genome: /QRISdata/Q9140/lmac/annot_lmac/data/genomes/Lmac_D5.fasta
 outdir: /QRISdata/Q9140/lmac/annot_lmac/results/tiberius_evidence
 
 rnaseq_paired:
-  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-5-1_R1.fastq.gz"
-  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-5-1_R2.fastq.gz"
-  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-5-2_R1.fastq.gz"
-  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-5-2_R2.fastq.gz"
-  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-5-3_R1.fastq.gz"
-  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-5-3_R2.fastq.gz"
-  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-6-1_R1.fastq.gz"
-  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-6-1_R2.fastq.gz"
-  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-6-2_R1.fastq.gz"
-  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-6-2_R2.fastq.gz"
-  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-6-3_R1.fastq.gz"
-  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-6-3_R2.fastq.gz"
-  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-7-1_R1.fastq.gz"
-  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-7-1_R2.fastq.gz"
-  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-7-2_R1.fastq.gz"
-  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-7-2_R2.fastq.gz"
-  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-7-3_R1.fastq.gz"
-  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-7-3_R2.fastq.gz"
-  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-1-1_R1.fastq.gz"
-  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-1-1_R2.fastq.gz"
-  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-1-2_R1.fastq.gz"
-  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-1-2_R2.fastq.gz"
-  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-1-3_R1.fastq.gz"
-  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-1-3_R2.fastq.gz"
-  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-2-1_R1.fastq.gz"
-  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-2-1_R2.fastq.gz"
-  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-2-2_R1.fastq.gz"
-  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-2-2_R2.fastq.gz"
-  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-2-3_R1.fastq.gz"
-  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-2-3_R2.fastq.gz"
+  - ["/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-5-1_R1.fastq.gz", "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-5-1_R2.fastq.gz"]
+  - ["/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-5-2_R1.fastq.gz", "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-5-2_R2.fastq.gz"]
+  - ["/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-5-3_R1.fastq.gz", "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-5-3_R2.fastq.gz"]
+  - ["/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-6-1_R1.fastq.gz", "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-6-1_R2.fastq.gz"]
+  - ["/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-6-2_R1.fastq.gz", "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-6-2_R2.fastq.gz"]
+  - ["/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-6-3_R1.fastq.gz", "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-6-3_R2.fastq.gz"]
+  - ["/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-7-1_R1.fastq.gz", "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-7-1_R2.fastq.gz"]
+  - ["/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-7-2_R1.fastq.gz", "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-7-2_R2.fastq.gz"]
+  - ["/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-7-3_R1.fastq.gz", "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-7-3_R2.fastq.gz"]
+  - ["/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-1-1_R1.fastq.gz", "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-1-1_R2.fastq.gz"]
+  - ["/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-1-2_R1.fastq.gz", "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-1-2_R2.fastq.gz"]
+  - ["/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-1-3_R1.fastq.gz", "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-1-3_R2.fastq.gz"]
+  - ["/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-2-1_R1.fastq.gz", "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-2-1_R2.fastq.gz"]
+  - ["/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-2-2_R1.fastq.gz", "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-2-2_R2.fastq.gz"]
+  - ["/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-2-3_R1.fastq.gz", "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-2-3_R2.fastq.gz"]
 
 odb12Partitions:
   - Fungi
+
+# Explicitly empty SRA lists to avoid fasterq-dump check
+rnaseq_sra_paired: []
+rnaseq_sra_single: []
+isoseq_sra: []
 
 tiberius:
   run: false
