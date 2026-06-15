@@ -5,15 +5,12 @@
 #SBATCH --cpus-per-task=2
 #SBATCH --mem=8G
 #SBATCH --time=48:00:00
-#SBATCH --job-name=tiberius_evidence
+#SBATCH --job-name=ti=tb_evidence
 #SBATCH --partition=general
 #SBATCH --qos=normal
-#SBATCH --output=tiberius_evidence.log
+#SBATCH --output=tbe.log
 
 module load nextflow/25.04.6
-module load python/3.12.3-gcccore-13.3.0
-
-source /QRISdata/Q9140/lmac/annot_lmac/tiberius_venv/bin/activate
 
 export APPTAINER_TMPDIR=/scratch/user/uqctung/tmp
 export APPTAINER_CACHEDIR=/scratch/user/uqctung/cache
@@ -24,6 +21,10 @@ mkdir -p $NXF_WORK
 
 cd /QRISdata/Q9140/lmac/annot_lmac
 
-python Tiberius/tiberius.py \
+apptainer exec \
+    --nv \
+    -B $PWD,$NXF_WORK,$APPTAINER_TMPDIR \
+    /home/uqctung/containers/tiberius_latest.sif \
+    python /opt/Tiberius/tiberius.py \
     --params_yaml profiles/bunya/nf_params.yaml \
     --nf_config profiles/bunya/nf.config
