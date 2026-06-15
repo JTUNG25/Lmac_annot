@@ -42,7 +42,7 @@ rule omark:
         db=OMA_DB,
         proteins=PROTEINS,
     output:
-        f"results/omark/{GENOME}/omark_output.sum",
+        f"results/omark/{GENOME}/{GENOME}.sum",
     log:
         f"logs/omark/{GENOME}.omark.log",
     container:
