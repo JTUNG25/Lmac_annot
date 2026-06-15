@@ -6,21 +6,21 @@ outdir: /QRISdata/Q9140/lmac/annot_lmac/results/tiberius_evidence
 
 # RNA-seq — only D5-5, D5-6, D5-7, WT-1, WT-2 replicates
 rnaseq_paired:
-  - "/QRISdata/Q9141/lmac_rna/merged_raw/D5-5-1_R{1,2}.fastq.gz"
-  - "/QRISdata/Q9141/lmac_rna/merged_raw/D5-5-2_R{1,2}.fastq.gz"
-  - "/QRISdata/Q9141/lmac_rna/merged_raw/D5-5-3_R{1,2}.fastq.gz"
-  - "/QRISdata/Q9141/lmac_rna/merged_raw/D5-6-1_R{1,2}.fastq.gz"
-  - "/QRISdata/Q9141/lmac_rna/merged_raw/D5-6-2_R{1,2}.fastq.gz"
-  - "/QRISdata/Q9141/lmac_rna/merged_raw/D5-6-3_R{1,2}.fastq.gz"
-  - "/QRISdata/Q9141/lmac_rna/merged_raw/D5-7-1_R{1,2}.fastq.gz"
-  - "/QRISdata/Q9141/lmac_rna/merged_raw/D5-7-2_R{1,2}.fastq.gz"
-  - "/QRISdata/Q9141/lmac_rna/merged_raw/D5-7-3_R{1,2}.fastq.gz"
-  - "/QRISdata/Q9141/lmac_rna/merged_raw/WT-1-1_R{1,2}.fastq.gz"
-  - "/QRISdata/Q9141/lmac_rna/merged_raw/WT-1-2_R{1,2}.fastq.gz"
-  - "/QRISdata/Q9141/lmac_rna/merged_raw/WT-1-3_R{1,2}.fastq.gz"
-  - "/QRISdata/Q9141/lmac_rna/merged_raw/WT-2-1_R{1,2}.fastq.gz"
-  - "/QRISdata/Q9141/lmac_rna/merged_raw/WT-2-2_R{1,2}.fastq.gz"
-  - "/QRISdata/Q9141/lmac_rna/merged_raw/WT-2-3_R{1,2}.fastq.gz"
+  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-5-1_R{1,2}.fastq.gz"
+  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-5-2_R{1,2}.fastq.gz"
+  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-5-3_R{1,2}.fastq.gz"
+  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-6-1_R{1,2}.fastq.gz"
+  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-6-2_R{1,2}.fastq.gz"
+  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-6-3_R{1,2}.fastq.gz"
+  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-7-1_R{1,2}.fastq.gz"
+  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-7-2_R{1,2}.fastq.gz"
+  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/D5-7-3_R{1,2}.fastq.gz"
+  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-1-1_R{1,2}.fastq.gz"
+  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-1-2_R{1,2}.fastq.gz"
+  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-1-3_R{1,2}.fastq.gz"
+  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-2-1_R{1,2}.fastq.gz"
+  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-2-2_R{1,2}.fastq.gz"
+  - "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-2-3_R{1,2}.fastq.gz"
 
 # Protein evidence from OrthoDB12 Fungi partition
 odb12Partitions:
