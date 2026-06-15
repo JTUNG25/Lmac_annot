@@ -1,0 +1,27 @@
+# Genome
+genome: /QRISdata/Q9140/lmac/annot_lmac/data/genomes/Lmac_D5.fasta
+
+# Output directory
+outdir: /QRISdata/Q9140/lmac/annot_lmac/results/tiberius_evidence
+
+# RNA-seq paired-end reads — use absolute paths
+rnaseq_paired: [
+  /QRISdata/Q9141/lmac_rna/merged_raw/D5-5-{1,2,3}_R{1,2}.fastq.gz,
+  /QRISdata/Q9141/lmac_rna/merged_raw/D5-6-{1,2,3}_R{1,2}.fastq.gz,
+  /QRISdata/Q9141/lmac_rna/merged_raw/D5-7-{1,2,3}_R{1,2}.fastq.gz,
+  /QRISdata/Q9141/lmac_rna/merged_raw/WT-1-{1,2,3}_R{1,2}.fastq.gz,
+  /QRISdata/Q9141/lmac_rna/merged_raw/WT-2-{1,2,3}_R{1,2}.fastq.gz,
+]
+
+# Protein evidence from OrthoDB12 Fungi partition (downloaded automatically)
+odb12Partitions:
+  - Fungi
+
+# Tiberius settings
+tiberius:
+  run: true
+  model: fungi
+  result: /QRISdata/Q9140/lmac/annot_lmac/results/tiberius/Lmac_D5.gtf  # reuse existing ab initio result
+
+# Threads
+threads: 8
