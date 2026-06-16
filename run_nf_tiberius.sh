@@ -13,6 +13,7 @@
 source /sw/local/rocky8/noarch/rcc/software/miniforge/24.11.3-0/etc/profile.d/conda.sh
 conda activate snakemake8
 
+module unload java
 module load java/21.0.8
 module load nextflow/25.04.6
 
