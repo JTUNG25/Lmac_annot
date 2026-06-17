@@ -4,7 +4,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=4G
-#SBATCH --time=48:00:00
+#SBATCH --time=96:00:00
 #SBATCH --job-name=tb_evidence
 #SBATCH --partition=general
 #SBATCH --qos=normal
