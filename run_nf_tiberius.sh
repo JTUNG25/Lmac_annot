@@ -30,3 +30,4 @@ cd /QRISdata/Q9140/lmac/annot_lmac
 python Tiberius/tiberius.py \
     --params_yaml profiles/bunya/nf_params.yaml \
     --nf_config profiles/bunya/nf.config
+    -resume

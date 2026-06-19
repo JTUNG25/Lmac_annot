@@ -27,7 +27,7 @@ rnaseq_sra_single: []
 isoseq_sra: []
 
 tiberius:
-  run: false
+  run: true
   result: /QRISdata/Q9140/lmac/annot_lmac/results/tiberius/Lmac_D5.gtf
 
 threads: 8
