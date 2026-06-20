@@ -11,7 +11,7 @@ OMA_DB = "data/omark/LUCA.h5"
 
 rule target:
     input:
-        f"results/omark/{GENOME}/omark_output.sum",
+        f"results/omark/{GENOME}/{GENOME}.sum",
 
 rule omamer_search:
     input:
