@@ -28,6 +28,7 @@ isoseq_sra: []
 
 tiberius:
   run: true
+  model_cfg: fungi
   result: /QRISdata/Q9140/lmac/annot_lmac/results/tiberius/Lmac_D5.gtf
 
 threads: 8
