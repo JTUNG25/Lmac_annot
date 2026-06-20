@@ -28,7 +28,10 @@ isoseq_sra: []
 
 tiberius:
   run: true
-  model_cfg: fungi
+  model_cfg: /QRISdata/Q9140/lmac/annot_lmac/Tiberius/model_cfg/fungi.yaml
   result: /QRISdata/Q9140/lmac/annot_lmac/results/tiberius/Lmac_D5.gtf
+
+# result field is not used by the Nextflow pipeline (RUN_TIBERIUS/HC_FORMAT_FILTER 
+# write hardcoded filenames into `outdir` instead, e.g. tiberius_train.gff3)
 
 threads: 8
