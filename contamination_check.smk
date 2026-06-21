@@ -21,7 +21,7 @@ rule parse_omark:
         contam_proteins=f"{OUTDIR}/contaminated_proteins_list.tsv",
         species_map=f"{OUTDIR}/protein_species_map.tsv",
     log:
-        "logs/parse_omark.log",
+        "logs/parse_omark.log"
     script:
         """
         from collections import defaultdict
@@ -68,7 +68,7 @@ rule map_proteins_to_scaffolds:
         scaffold_report=f"{OUTDIR}/contamination_report.txt",
         summary_tsv=f"{OUTDIR}/scaffold_summary.tsv",
     log:
-        "logs/map_proteins_to_scaffolds.log",
+        "logs/map_proteins_to_scaffolds.log"
     script:
         """
         from Bio import SeqIO
@@ -166,7 +166,7 @@ rule species_breakdown:
     output:
         species_summary=f"{OUTDIR}/species_breakdown.txt",
     log:
-        "logs/species_breakdown.log",
+        "logs/species_breakdown.log"
     script:
         """
         from collections import defaultdict
