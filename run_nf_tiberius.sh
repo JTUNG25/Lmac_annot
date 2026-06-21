@@ -3,7 +3,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
-#SBATCH --mem=16G
+#SBATCH --mem=32G
 #SBATCH --time=96:00:00
 #SBATCH --job-name=tb_evidence
 #SBATCH --partition=general
@@ -20,7 +20,7 @@ module load nextflow/25.04.6
 export PATH=~/bin:$PATH 
 export APPTAINER_TMPDIR=/scratch/user/uqctung/tmp
 export APPTAINER_CACHEDIR=/scratch/user/uqctung/cache
-export NXF_SINGULARITY_CACHEDIR=/home/uqctung/containers  # ← ADD THIS LINE
+export NXF_SINGULARITY_CACHEDIR=/home/uqctung/containers
 mkdir -p $APPTAINER_TMPDIR $APPTAINER_CACHEDIR
 
 export NXF_WORK=/scratch/user/uqctung/nextflow_work
