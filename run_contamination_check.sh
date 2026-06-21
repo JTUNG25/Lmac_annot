@@ -14,9 +14,7 @@ conda activate snakemake8
 
 cd /QRISdata/Q9140/lmac/annot_lmac
 
-export TMPDIR=/scratch/user/uqctung/tmp
-export APPTAINER_TMPDIR=$TMPDIR/apptainer_tmp
-export APPTAINER_CACHEDIR=$TMPDIR/apptainer_cache
-mkdir -p $APPTAINER_TMPDIR $APPTAINER_CACHEDIR
+export TMPDIR=/QRISdata/Q9140/lmac/annot_lmac/tmp
+mkdir -p $TMPDIR
 
-snakemake -s contamination_check.smk --cores 4 --profile profiles/bunya/
+snakemake -s contamination_check.smk --cores 4
