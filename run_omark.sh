@@ -1,9 +1,9 @@
 #!/bin/bash
 #SBATCH --account=a_qaafi_chs
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=2
-#SBATCH --mem=4G
-#SBATCH --time=24:00:00
+#SBATCH --cpus-per-task=12
+#SBATCH --mem=32G
+#SBATCH --time=48:00:00
 #SBATCH --job-name=omark
 #SBATCH --partition=general
 #SBATCH --qos=normal
