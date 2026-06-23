@@ -48,7 +48,7 @@ rule omark:
     container:
         omark
     resources:
-        mem_mb=16000,
+        mem_mb=32000,
         runtime=120,
     params:
         outdir=f"results/omark/{GENOME}",
