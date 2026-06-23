@@ -4,7 +4,7 @@
 omamer = "docker://quay.io/biocontainers/omamer:2.1.2--pyhdfd78af_0"
 omark = "docker://quay.io/biocontainers/omark:0.4.1--pyh7e72e81_0"
 
-GENOME = "Lmac_D5_evidence"  # changed from "Lmac_D5" so this doesn't overwrite your ab initio OMArk results
+GENOME = "Lmac_D5_evidence_CLEANED"  
 PROTEINS = "/QRISdata/Q9140/lmac/annot_lmac/results/tiberius_evidence/tiberius_train_proteins.fa"
 OMA_DB = "data/omark/LUCA.h5"
 
