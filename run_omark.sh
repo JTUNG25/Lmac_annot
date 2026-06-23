@@ -14,7 +14,7 @@ conda activate snakemake8
 
 cd /QRISdata/Q9140/lmac/annot_lmac
 
-export TMPDIR=/scratch/user/uqctung/tmp
+export TMPDIR=/scratch/user/uqctung/
 export APPTAINER_TMPDIR=$TMPDIR/apptainer_tmp
 export APPTAINER_CACHEDIR=$TMPDIR/apptainer_cache
 mkdir -p $APPTAINER_TMPDIR $APPTAINER_CACHEDIR
