@@ -5,10 +5,10 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=4G
 #SBATCH --time=24:00:00
-#SBATCH --job-name=tiberius
+#SBATCH --job-name=func_annot
 #SBATCH --partition=general
 #SBATCH --qos=normal
-#SBATCH --output=tb.log
+#SBATCH --output=funcannot.log
 
 source /sw/local/rocky8/noarch/rcc/software/miniforge/24.11.3-0/etc/profile.d/conda.sh
 conda activate snakemake8
@@ -16,4 +16,4 @@ conda activate snakemake8
 export TMPDIR=/scratch/user/uqctung/tmp
 mkdir -p $TMPDIR
 
-snakemake -s tiberius.smk --profile profiles/bunya/
+snakemake -s annotation_tiberius.smk --profile profiles/bunya/
