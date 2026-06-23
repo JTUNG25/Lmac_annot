@@ -68,7 +68,7 @@ rule eggnog_annotation:
         """
         mkdir -p results/eggnog
         
-        export TMPDIR=/QRISdata/Q9140/lmac/annot_lmac/results/tiberius_evidence/tmp
+        export TMPDIR=/scratch/user/uqctung/eggnog_tmp_{wildcards.sample}
         mkdir -p $TMPDIR
         
         emapper.py \
