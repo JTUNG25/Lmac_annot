@@ -19,4 +19,7 @@ export APPTAINER_TMPDIR=$TMPDIR/apptainer_tmp
 export APPTAINER_CACHEDIR=$TMPDIR/apptainer_cache
 mkdir -p $TMPDIR $XDG_CACHE_HOME $APPTAINER_TMPDIR $APPTAINER_CACHEDIR
 
+# Add this line explicitly before snakemake
+cd /QRISdata/Q9140/lmac/annot_lmac
+
 snakemake -s annotation_tiberius.smk --profile profiles/bunya/
