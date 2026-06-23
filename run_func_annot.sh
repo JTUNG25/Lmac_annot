@@ -2,9 +2,9 @@
 #SBATCH --account=a_qaafi_chs
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=4
-#SBATCH --mem=4G
-#SBATCH --time=24:00:00
+#SBATCH --cpus-per-task=12
+#SBATCH --mem=32G
+#SBATCH --time=48:00:00
 #SBATCH --job-name=func_annot
 #SBATCH --partition=general
 #SBATCH --qos=normal
@@ -14,6 +14,8 @@ source /sw/local/rocky8/noarch/rcc/software/miniforge/24.11.3-0/etc/profile.d/co
 conda activate snakemake8
 
 export TMPDIR=/scratch/user/uqctung/tmp
-mkdir -p $TMPDIR
+export APPTAINER_TMPDIR=$TMPDIR/apptainer_tmp
+export APPTAINER_CACHEDIR=$TMPDIR/apptainer_cache
+mkdir -p $APPTAINER_TMPDIR $APPTAINER_CACHEDIR
 
 snakemake -s annotation_tiberius.smk --profile profiles/bunya/
