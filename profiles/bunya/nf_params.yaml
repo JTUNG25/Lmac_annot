@@ -18,7 +18,7 @@ rnaseq_paired:
   - ["/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-2-2_R1.fastq.gz", "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-2-2_R2.fastq.gz"]
   - ["/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-2-3_R1.fastq.gz", "/QRISdata/Q9140/lmac/annot_lmac/data/rnaseq/WT-2-3_R2.fastq.gz"]
 
-protein_seqs:
+proteins:
   - /QRISdata/Q9140/lmac/annot_lmac/data/proteins/uniprot_fungi_reviewed.fasta
 
 # Explicitly empty SRA lists to avoid fasterq-dump check
