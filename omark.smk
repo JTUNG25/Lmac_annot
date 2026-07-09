@@ -2,7 +2,8 @@
 
 # containers
 omamer = "docker://quay.io/biocontainers/omamer:2.1.2--pyhdfd78af_0"
-omark = "docker://quay.io/biocontainers/omark:0.4.1--pyh7e72e81_0"
+omark = "/scratch/user/uqctung/apptainer_cache/d50221fcdbdecb24f5454545f68e896a.simg"
+#"docker://quay.io/biocontainers/omark:0.4.1--pyh7e72e81_0"
 
 GENOME = "Lmac_D5_CLEANED"  
 PROTEINS = "/QRISdata/Q9140/lmac/annot_lmac/results/tiberius_evidence/tiberius_train_proteins.fa"
