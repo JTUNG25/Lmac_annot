@@ -32,10 +32,6 @@ rerun-incomplete: false
 printshellcmds: true
 use-apptainer: true
 use-conda: False
-apptainer-args: "-B $PWD,$TMPDIR \
-  --nv \
-  -H $(mktemp -d) \
-  --pwd $PWD \
-  --containall --cleanenv --writable-tmpfs"
+apptainer-args: "-B $PWD,/scratch/user/uqctung/,/QRISdata/"
 rerun-triggers:
   - mtime

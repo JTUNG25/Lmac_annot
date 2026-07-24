@@ -1,4 +1,4 @@
-genome: /QRISdata/Q9140/lmac/annot_lmac/data/genomes/Lmac_D5_clean2.fasta
+genome: /QRISdata/Q9140/lmac/annot_lmac/data/genomes/Lmac_D5_CLEANED.fasta
 outdir: /QRISdata/Q9140/lmac/annot_lmac/results/tiberius_evidence
 
 rnaseq_paired:
