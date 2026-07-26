@@ -5,8 +5,8 @@ omamer = "docker://quay.io/biocontainers/omamer:2.1.2--pyhdfd78af_0"
 omark = "/scratch/user/uqctung/apptainer_cache/d50221fcdbdecb24f5454545f68e896a.simg"
 #"docker://quay.io/biocontainers/omark:0.4.1--pyh7e72e81_0"
 
-GENOME = "Lmac_D5_FCS_CLEANED"  
-PROTEINS = "/QRISdata/Q9140/lmac/annot_lmac/results/tiberius_evidence/tiberius_train_proteins.fa"
+GENOME = "Lmac_D5_FCS_CLEANED_Ab"  
+PROTEINS = "/QRISdata/Q9140/lmac/annot_lmac/results/tiberius_evidence/tiberius_proteins.fa"
 OMA_DB = "data/omark/LUCA.h5"
 
 
