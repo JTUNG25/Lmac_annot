@@ -30,12 +30,30 @@ rule compress_tiberius_output:
         "gzip -k {input.gff3} {input.gtf} &> {log}"
 
 
+rule gtf_to_gff3:
+    # tiberius.py's --out only honours the first path given to it (confirmed
+    # from logs: it wrote only the .gtf despite being passed both .gtf and
+    # .gff3 paths), so GFF3 is derived separately with gffread rather than
+    # requested directly from Tiberius.
+    input:
+        gtf="results/tiberius/{genome}.gtf",
+    output:
+        gff3="results/tiberius/{genome}.gff3",
+    log:
+        "logs/tiberius/gtf_to_gff3/{genome}.log",
+    resources:
+        mem_mb=4000,
+        runtime=20,
+    shell:
+        "module load gffread/0.12.7-gcccore-12.3.0 && "
+        "gffread {input.gtf} -o {output.gff3} &> {log}"
+
+
 rule tiberius:
     input:
         fasta="data/genomes/{genome}.fasta",
     output:
         gtf="results/tiberius/{genome}.gtf",
-        gff3="results/tiberius/{genome}.gff3",
     log:
         "logs/tiberius/{genome}.log",
     container:
@@ -53,6 +71,6 @@ rule tiberius:
         "tiberius.py "
         "--genome {input.fasta} "
         "--model_cfg {params.model_cfg} "
-        "--out {output.gtf} {output.gff3} "
+        "--out {output.gtf} "
         "--batch_size {params.batch_size} "
         "&> {log}"
