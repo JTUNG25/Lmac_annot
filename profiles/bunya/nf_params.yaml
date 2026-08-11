@@ -1,4 +1,4 @@
-genome: /QRISdata/Q9140/lmac/annot_lmac/data/genomes/Lmac_D5_FCS_CLEANED.fasta
+genome: /QRISdata/Q9140/lmac/annot_lmac/data/genomes/Lmac_D5_Final_renamed.fasta
 outdir: /QRISdata/Q9140/lmac/annot_lmac/results/tiberius_evidence
 
 rnaseq_paired:
@@ -29,7 +29,7 @@ isoseq_sra: []
 tiberius:
   run: true
   model_cfg: /QRISdata/Q9140/lmac/annot_lmac/Tiberius/model_cfg/fungi.yaml
-  result: /QRISdata/Q9140/lmac/annot_lmac/results/tiberius/Lmac_D5_FCS_CLEANED.gff3
+  result: /QRISdata/Q9140/lmac/annot_lmac/results/tiberius/Lmac_D5_Final_renamed.gff3
 
 # result field is not used by the Nextflow pipeline (RUN_TIBERIUS/HC_FORMAT_FILTER 
 # write hardcoded filenames into `outdir` instead, e.g. tiberius_train.gff3)
